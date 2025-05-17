@@ -9,17 +9,21 @@ COLOR_YELLOW = (255, 255, 0)
 # E
 EVENT_ENEMY = pygame.USEREVENT + 1
 ENTITY_SPEED = {
-    'Level1Bg0': 0,
+    'Level1Bg0': 0, # velocidade menor para inimigos para facilitar o jogador
     'Level1Bg1': 1,
     'Level1Bg2': 2,
     'Level1Bg3': 3,
     'Level1Bg4': 4,
     'Level1Bg5': 5,
     'Level1Bg6': 6,
-    'Player1': 3,
-    'Player2': 3,
+    'Player1': 5,
+    'Player1Shot': 3,
+    'Player2': 5,
+    'Player2Shot': 3,
     'Enemy1': 2,
-    'Enemy2': 1,
+    'Enemy1Shot': 4,
+    'Enemy2': 2,
+    'Enemy2Shot': 8,
 }
 
 ENTITY_HEALTH = {
@@ -30,10 +34,22 @@ ENTITY_HEALTH = {
     'Level1Bg4': 999,
     'Level1Bg5': 999,
     'Level1Bg6': 999,
-    'Player1': 300,
-    'Player2': 300,
+    'Player1': 100,
+    'Player1Shot': 1,
+    'Player2': 100,
+    'Player2Shot': 1,
     'Enemy1': 50,
-    'Enemy2': 60
+    'Enemy1Shot': 1,
+    'Enemy2': 60,
+    'Enemy2Shot': 1,
+    'Boss': 300,
+}
+
+ENTITY_SHOT_DELAY = {
+    'Player1': 20, # demora mais para atirar, mais fácil para o jogador
+    'Player2': 20,
+    'Enemy1': 60,
+    'Enemy2': 80,
 }
 
 
@@ -53,8 +69,8 @@ PLAYER_KEY_LEFT = { 'Player1': pygame.K_LEFT,
                   'Player2': pygame.K_a}
 PLAYER_KEY_RIGHT = { 'Player1': pygame.K_RIGHT,
                   'Player2': pygame.K_d}
-PLAYER_KEY_SHOOT = { 'Player1': pygame.K_RCTRL,
-                  'Player2': pygame.K_LCTRL}
+PLAYER_KEY_SHOOT = { 'Player1': pygame.K_SPACE,
+                  'Player2': pygame.K_BACKSLASH}
 
 # S
 SPAWN_TIME = 4000
